@@ -19,7 +19,13 @@ function extractValues(data) {
 */
 
 function arrayToLengthCounters(array) {
-  // Tu código aquí
+  const objectEmpy = {};
+
+  array.forEach((element) => {
+    objectEmpy[element] = element.length;
+  });
+
+  return objectEmpy;
 }
 
 /*  
