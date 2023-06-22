@@ -6,7 +6,8 @@
 */
 
 function extractValues(data) {
-  // Tu código aquí
+  const valuesObject = Object.values(data);
+  return valuesObject;
 }
 
 /*  
@@ -18,7 +19,13 @@ function extractValues(data) {
 */
 
 function arrayToLengthCounters(array) {
-  // Tu código aquí
+  const objectEmpy = {};
+
+  array.forEach((element) => {
+    objectEmpy[element] = element.length;
+  });
+
+  return objectEmpy;
 }
 
 /*  
@@ -30,15 +37,25 @@ function arrayToLengthCounters(array) {
 */
 
 function findKeysInCommon(objeto1, objeto2) {
-  // Tu código aquí
+  const object1Keys = Object.keys(objeto1);
+  const object2Keys = Object.keys(objeto2);
+  const keysEcuals = [];
+
+  object1Keys.forEach((element) => {
+    if (object2Keys.includes(element)) {
+      keysEcuals.push(element);
+    }
+  });
+
+  return keysEcuals;
 }
 
 // Llamamos a las funciones y mostramos los resultados
 
 function main() {
-  console.log(extractValues({a: 1, b: 2, c: 3}));
+  console.log(extractValues({ a: 1, b: 2, c: 3 }));
   console.log(arrayToLengthCounters(['gato', 'perro', 'elefante']));
-  console.log(findKeysInCommon({a: 1, b: 2, c: 3}, {b: 4, c: 5, d: 6}));
+  console.log(findKeysInCommon({ a: 1, b: 2, c: 3 }, { b: 4, c: 5, d: 6 }));
 }
 
 main();
